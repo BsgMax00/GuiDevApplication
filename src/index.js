@@ -4,10 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { PokemonCardVisibilityProvider } from './Context/PokemonCardVisibilityContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <PokemonCardVisibilityProvider>
+      <App />
+    </PokemonCardVisibilityProvider>
   </React.StrictMode>
 );
 
