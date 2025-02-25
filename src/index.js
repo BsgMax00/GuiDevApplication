@@ -5,14 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { PokemonCardVisibilityProvider } from './Context/PokemonCardVisibilityContext';
+import { ModalProvider } from './Context/ModalContext';
+import { PokemonProvider } from './Context/PokemonContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <PokemonCardVisibilityProvider>
-      <App />
-    </PokemonCardVisibilityProvider>
+    <PokemonProvider>
+      <ModalProvider>
+        <App/>
+      </ModalProvider>
+    </PokemonProvider>
   </React.StrictMode>
 );
 

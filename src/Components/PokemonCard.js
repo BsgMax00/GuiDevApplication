@@ -1,9 +1,10 @@
-import { useContext } from "react";
 import PlusIcon from "../icons/PlusIcon.png"
-import { PokemonCardVisibilityContext } from "../Context/PokemonCardVisibilityContext";
+
+import { useContext } from "react";
+import { ModalContext } from "../Context/ModalContext";
 
 const PokemonCard = ({ imageUrl = "" }) => {
-    const { setShowModal } = useContext(PokemonCardVisibilityContext);
+    const { setShowModal } = useContext(ModalContext);
 
     return (
         <div className="col-2">

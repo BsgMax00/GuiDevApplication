@@ -1,11 +1,11 @@
 import PokemonCard from "../Components/PokemonCard";
 
 import { useState, useContext } from "react";
-import { PokemonCardVisibilityContext } from "../Context/PokemonCardVisibilityContext";
+import { ModalContext } from "../Context/ModalContext";
 
 const TeamBuilder = () => {
     const [Test, setTest] = useState([])
-    const { showModal, setShowModal } = useContext(PokemonCardVisibilityContext);
+    const { showModal, setShowModal } = useContext(ModalContext);
 
     const Add = () => {
         setTest(Test => [...Test, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png"])
