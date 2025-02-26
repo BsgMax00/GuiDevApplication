@@ -1,27 +1,34 @@
 import PokemonCard from "../Components/PokemonCard";
 
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { ModalContext } from "../Context/ModalContext";
+import { PokemonContext } from "../Context/PokemonContext";
 
 const TeamBuilder = () => {
-    const [Test, setTest] = useState([])
+    const { partyData, setPartyData } = useContext(PokemonContext)
     const { showModal, setShowModal } = useContext(ModalContext);
 
     const Add = () => {
-        setTest(Test => [...Test, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png"])
-    }
+        setPartyData((prevPartyData) => {
+            const newPartyData = [...prevPartyData]
+            const newIndex = newPartyData.findIndex(item => item === "");
+    
+            if (newIndex !== -1) {
+                newPartyData[newIndex] = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png";
+            }
+
+            return newPartyData
+        });
+    };
 
     return (
         <div>
             <div className="mx-4" style={{height: "90vh"}}>
                 <div className="d-flex align-items-center h-100">
                     <div className="row  w-100">
-                        <PokemonCard imageUrl={Test[0]}/>
-                        <PokemonCard imageUrl={Test[1]}/>
-                        <PokemonCard imageUrl={Test[2]}/>
-                        <PokemonCard imageUrl={Test[3]}/>
-                        <PokemonCard imageUrl={Test[4]}/>
-                        <PokemonCard imageUrl={Test[5]}/>
+                        {partyData.map((Url, index) => {
+                            return <PokemonCard key={index} imageUrl={Url}/>
+                        })}
                     </div>
                 </div>
                 <button onClick={Add}>
