@@ -2,13 +2,19 @@ import PlusIcon from "../icons/PlusIcon.png"
 
 import { useContext } from "react";
 import { ModalContext } from "../Context/ModalContext";
+import { PokemonContext } from "../Context/PokemonContext";
 
-const PokemonCard = ({ imageUrl = "" }) => {
+const PokemonCard = ({ imageUrl = "", index }) => {
+    const { setSelectedPartyMember } = useContext(PokemonContext)
     const { setShowModal } = useContext(ModalContext);
 
     return (
         <div className="col-2">
-            <div onClick={(e) => {e.preventDefault(); setShowModal(true);}}>
+            <div onClick={(e) => {
+                    e.preventDefault();
+                    setShowModal(true);
+                    setSelectedPartyMember(index);
+                }}>
                 <div className="card">
                     {imageUrl ? (
                         <div style={{height: "286px", backgroundColor: "#E8EEEA"}}>
