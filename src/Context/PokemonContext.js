@@ -4,7 +4,7 @@ import Pokemon from "../Classes/Pokemon";
 export const PokemonContext = createContext();
 
 export const PokemonProvider = ({ children }) => {
-    const initialPokemonData = Array.from({ length: 20 }, () => new Pokemon("test", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png", "dark / light"));
+    const initialPokemonData = Array.from({ length: 150 }, () => new Pokemon("test", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png", "dark / light"));
     
     const [ selectedPartyMember, setSelectedPartyMember ] = useState(0)
     const [ partyData, setPartyData ] = useState(Array(6).fill(""));

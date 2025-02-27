@@ -29,17 +29,15 @@ const TeamBuilder = () => {
                     <div className="modal-lg modal-dialog modal-dialog-center">
                         <div className="modal-content">
                             <div className="modal-header">
+                            <button type="button" className="btn-close position-absolute top-0 end-0 m-2" onClick={() => { setShowModal(false)}}/>
                                 <h5 className="modal-title">Which Pokemon do you want to choose?</h5>
                             </div>
                             <div className="modal-body">
-                                <div className="row w-100">
+                                <div className="row">
                                     {pokemonData.map((pokemon, index) => {
                                         return <PokemonModalCard key={index} pokemon={pokemon}/>
                                     })}
                                 </div>
-                            </div>
-                            <div className="modal-footer">
-                                <button onClick={() => {setShowModal(false)}}>Close</button>
                             </div>
                         </div>
                     </div>

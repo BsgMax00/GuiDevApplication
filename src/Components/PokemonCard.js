@@ -27,7 +27,7 @@ const PokemonCard = ({ pokemon, index }) => {
                 <div className="card">
                     {pokemon.imageUrl ? (
                         <div style={{height: "286px", backgroundColor: "#E8EEEA"}}>
-                            <button type="button" className="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" onClick={(e) => {e.stopPropagation(); DeletePokemonFromTeam()}}></button>
+                            <button type="button" className="btn-close position-absolute top-0 end-0 m-2" onClick={(e) => {e.stopPropagation(); DeletePokemonFromTeam()}}/>
                             <img className="card-img-top" src={pokemon.imageUrl} alt=""/>
                         </div>
                     ) : (
