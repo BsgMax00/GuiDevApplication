@@ -1,4 +1,4 @@
-import PokeIcon from '../icons/PokeBallIcon.svg'
+import PokeIcon from '../Icons/PokeBallIcon.svg'
 
 const Navbar = () => {
     return (

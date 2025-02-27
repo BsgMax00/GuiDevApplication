@@ -17,8 +17,8 @@ const TeamBuilder = () => {
                         <center className="col-12 mb-3">
                             <h2>Pick your pokemon for your team</h2>
                         </center>
-                        {partyData.map((Url, index) => {
-                            return <PokemonCard key={index} imageUrl={Url} index={index}/>
+                        {partyData.map((pokemon, index) => {
+                            return <PokemonCard key={index} pokemon={pokemon} index={index}/>
                         })}
                     </div>
                 </div>
@@ -33,8 +33,8 @@ const TeamBuilder = () => {
                             </div>
                             <div className="modal-body">
                                 <div className="row w-100">
-                                    {pokemonData.map((Url, index) => {
-                                        return <PokemonModalCard key={index} imagUrl={Url}/>
+                                    {pokemonData.map((pokemon, index) => {
+                                        return <PokemonModalCard key={index} pokemon={pokemon}/>
                                     })}
                                 </div>
                             </div>

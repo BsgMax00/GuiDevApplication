@@ -2,14 +2,14 @@ import { useContext } from "react";
 import { ModalContext } from "../Context/ModalContext";
 import { PokemonContext } from "../Context/PokemonContext";
 
-const PokemonModalCard = ({ imagUrl = ""}) => {
+const PokemonModalCard = ({ pokemon }) => {
     const { setShowModal } = useContext(ModalContext);
     const { selectedPartyMember, setPartyData } = useContext(PokemonContext)
 
     const AddPokemonToTeam = () => {
         setPartyData((prevPartyData) => {
             const newPartyData = [...prevPartyData];
-            newPartyData[selectedPartyMember] = imagUrl;
+            newPartyData[selectedPartyMember] = pokemon;
 
             return newPartyData;
         })
@@ -22,7 +22,7 @@ const PokemonModalCard = ({ imagUrl = ""}) => {
                     setShowModal(false);
                     AddPokemonToTeam();
                 }}>
-                    <img className="card-img-top" src={imagUrl} alt=""/>
+                    <img className="card-img-top" src={pokemon.imageUrl} alt={pokemon.name}/>
                 </div>
             </div>
         </div>

@@ -1,12 +1,21 @@
-import PlusIcon from "../icons/PlusIcon.png"
+import PlusIcon from "../Icons/PlusIcon.png"
 
 import { useContext } from "react";
 import { ModalContext } from "../Context/ModalContext";
 import { PokemonContext } from "../Context/PokemonContext";
 
-const PokemonCard = ({ imageUrl = "", index }) => {
-    const { setSelectedPartyMember } = useContext(PokemonContext)
+const PokemonCard = ({ pokemon, index }) => {
+    const { setPartyData, setSelectedPartyMember } = useContext(PokemonContext)
     const { setShowModal } = useContext(ModalContext);
+
+    const DeletePokemonFromTeam = () => {
+        setPartyData((prevPartyData) => {
+            const newPartyData = [...prevPartyData];
+            newPartyData[index] = "";
+
+            return newPartyData;
+        })
+    }
 
     return (
         <div className="col-2">
@@ -16,22 +25,23 @@ const PokemonCard = ({ imageUrl = "", index }) => {
                     setSelectedPartyMember(index);
                 }}>
                 <div className="card">
-                    {imageUrl ? (
+                    {pokemon.imageUrl ? (
                         <div style={{height: "286px", backgroundColor: "#E8EEEA"}}>
-                            <img className="card-img-top" src={imageUrl} alt=""/>
+                            <button type="button" className="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" onClick={(e) => {e.stopPropagation(); DeletePokemonFromTeam()}}></button>
+                            <img className="card-img-top" src={pokemon.imageUrl} alt=""/>
                         </div>
                     ) : (
                         <div className="d-flex justify-content-center align-items-center" style={{height: "339px", backgroundColor: "#E8EEEA"}}>
                             <img style={{height: "50%", width: "60%"}} src={PlusIcon} alt=""/>
                         </div>
                     )}
-                    {imageUrl && (
+                    {pokemon.imageUrl && (
                         <div style={{backgroundColor: "#DCE5DF"}}>
                             <div className="card-title text-center border-top pt-1 mb-0">
-                                title
+                                {pokemon.name}
                             </div>
                             <div className="card-Test text-center">
-                                test / test
+                                {pokemon.type}
                             </div>
                         </div>
                     )}
