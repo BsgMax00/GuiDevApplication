@@ -22,7 +22,7 @@ const PokemonModalCard = ({ pokemon }) => {
                     setShowModal(false);
                     AddPokemonToTeam();
                 }}>
-                    <img className="card-img-top" src={pokemon.imageUrl} alt={pokemon.name}/>
+                    <img className="card-img-top" src={pokemon.imageUrl} alt={pokemon.name} loading="lazy"/>
                 </div>
             </div>
         </div>

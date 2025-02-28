@@ -28,11 +28,11 @@ const PokemonCard = ({ pokemon, index }) => {
                     {pokemon.imageUrl ? (
                         <div style={{height: "286px", backgroundColor: "#E8EEEA"}}>
                             <button type="button" className="btn-close position-absolute top-0 end-0 m-2" onClick={(e) => {e.stopPropagation(); DeletePokemonFromTeam()}}/>
-                            <img className="card-img-top" src={pokemon.imageUrl} alt=""/>
+                            <img className="card-img-top" src={pokemon.imageUrl} alt="" loading="lazy"/>
                         </div>
                     ) : (
                         <div className="d-flex justify-content-center align-items-center" style={{height: "339px", backgroundColor: "#E8EEEA"}}>
-                            <img style={{height: "50%", width: "60%"}} src={PlusIcon} alt=""/>
+                            <img style={{height: "50%", width: "60%"}} src={PlusIcon} alt="" loading="lazy"/>
                         </div>
                     )}
                     {pokemon.imageUrl && (
