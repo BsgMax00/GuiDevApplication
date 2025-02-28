@@ -2,14 +2,14 @@ import PlusIcon from "../Icons/PlusIcon.png"
 
 import { useContext } from "react";
 import { ModalContext } from "../Context/ModalContext";
-import { PokemonContext } from "../Context/PokemonContext";
+import { PartyContext } from "../Context/PartyContext";
 
 const PokemonCard = ({ pokemon, index }) => {
-    const { setPartyData, setSelectedPartyMember } = useContext(PokemonContext)
+    const { setCurrentPartyData, setSelectedPartyMember } = useContext(PartyContext)
     const { setShowModal } = useContext(ModalContext);
 
     const DeletePokemonFromTeam = () => {
-        setPartyData((prevPartyData) => {
+        setCurrentPartyData((prevPartyData) => {
             const newPartyData = [...prevPartyData];
             newPartyData[index] = "";
 

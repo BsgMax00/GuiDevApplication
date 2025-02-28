@@ -7,14 +7,17 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ModalProvider } from './Context/ModalContext';
 import { PokemonProvider } from './Context/PokemonContext';
+import { PartyProvider } from './Context/PartyContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <PokemonProvider>
-      <ModalProvider>
-        <App/>
-      </ModalProvider>
+      <PartyProvider>
+        <ModalProvider>
+          <App/>
+        </ModalProvider>
+      </PartyProvider>
     </PokemonProvider>
   </React.StrictMode>
 );

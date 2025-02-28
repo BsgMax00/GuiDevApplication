@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { ModalContext } from "../Context/ModalContext";
-import { PokemonContext } from "../Context/PokemonContext";
+import { PartyContext } from "../Context/PartyContext";
 
 const PokemonModalCard = ({ pokemon }) => {
     const { setShowModal } = useContext(ModalContext);
-    const { selectedPartyMember, setPartyData } = useContext(PokemonContext)
+    const { selectedPartyMember, setCurrentPartyData } = useContext(PartyContext)
 
     const AddPokemonToTeam = () => {
-        setPartyData((prevPartyData) => {
+        setCurrentPartyData((prevPartyData) => {
             const newPartyData = [...prevPartyData];
             newPartyData[selectedPartyMember] = pokemon;
 
