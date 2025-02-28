@@ -1,10 +1,10 @@
-import PokemonModalCard from "../Components/PokemonModalCard";
+import TeambuilderModalCard from "./TeambuilderModalCard";
 
 import { useContext } from "react";
 import { ModalContext } from "../Context/ModalContext";
 import { PokemonContext } from "../Context/PokemonContext";
 
-const PokemonModal = () => {
+const TeambuilderModal = () => {
     const { pokemonData } = useContext(PokemonContext)
     const { showModal, setShowModal } = useContext(ModalContext);
 
@@ -20,7 +20,7 @@ const PokemonModal = () => {
                         <div className="modal-body">
                             <div className="row">
                                 {pokemonData.map((pokemon, index) => {
-                                    return <PokemonModalCard key={index} pokemon={pokemon}/>
+                                    return <TeambuilderModalCard key={index} pokemon={pokemon}/>
                                 })}
                             </div>
                         </div>
@@ -31,4 +31,4 @@ const PokemonModal = () => {
     }
 }
 
-export default PokemonModal
+export default TeambuilderModal

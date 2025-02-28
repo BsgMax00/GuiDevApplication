@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ModalContext } from "../Context/ModalContext";
 import { PartyContext } from "../Context/PartyContext";
 
-const PokemonCard = ({ pokemon, index }) => {
+const TeambuilderPokemonCard = ({ pokemon, index }) => {
     const { setCurrentPartyData, setSelectedPartyMember } = useContext(PartyContext)
     const { setShowModal } = useContext(ModalContext);
 
@@ -51,4 +51,4 @@ const PokemonCard = ({ pokemon, index }) => {
     );
 };
 
-export default PokemonCard;
+export default TeambuilderPokemonCard;

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Navbar from './Components/Navbar';
 import Teambuilder from './Pages/Teambuilder';
-import TeamViewer from './Pages/TeamViewer';
+import Teamviewer from './Pages/Teamviewer';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Teambuilder/>}/>
-        <Route path="/TeamViewer" element={<TeamViewer/>}/>
+        <Route path="/Teamviewer" element={<Teamviewer/>}/>
       </Routes>
     </BrowserRouter>
   );

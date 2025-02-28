@@ -1,5 +1,5 @@
-import PokemonCard from "../Components/PokemonCard";
-import PokemonModal from "../Components/PokemonModal";
+import TeambuilderPokemonCard from "../Components/TeambuilderPokemonCard";
+import TeambuilderModal from "../Components/TeambuilderModal";
 
 import { useContext } from "react";
 import { PartyContext } from "../Context/PartyContext";
@@ -62,7 +62,7 @@ const TeamBuilder = () => {
                         </div>
                         <div className="row">
                             {currentPartyData.map((pokemon, index) => {
-                                return <PokemonCard key={index} pokemon={pokemon} index={index}/>
+                                return <TeambuilderPokemonCard key={index} pokemon={pokemon} index={index}/>
                             })}
                         </div>
                     </div>
@@ -76,7 +76,7 @@ const TeamBuilder = () => {
                 </div>
             </div>
                 
-            <PokemonModal/>
+            <TeambuilderModal/>
         </div>
     );
 };
