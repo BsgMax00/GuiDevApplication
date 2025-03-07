@@ -1,3 +1,5 @@
+import PlusIcon from '../Icons/PlusIcon.png'
+
 const TeamviewerBanner = ({ party }) => {
     return (
         <div className="col-12 px-0">

@@ -1,11 +1,16 @@
 import TeambuilderPokemonCard from "../Components/TeambuilderPokemonCard";
 import TeambuilderModal from "../Components/TeambuilderModal";
 
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { PartyContext } from "../Context/PartyContext";
 
 const TeamBuilder = () => {
     const { allPartyData, currentPartyData, setCurrentPartyData, fetchPartyData } = useContext(PartyContext)
+    const [ teamName, setTeamName ] = useState("")
+
+    useEffect(() => {
+        setTeamName(`Team #${allPartyData.length + 1}`);
+    }, [allPartyData])
 
     const currentPartyEmpty = () => {
         return currentPartyData.every(item => item === "")
@@ -15,6 +20,7 @@ const TeamBuilder = () => {
         try{
             await postData();
             emptyCurrentParty();
+            setTeamName(`Team #${allPartyData.length + 1}`);
         }
         catch (error){
             console.log(error)
@@ -31,7 +37,7 @@ const TeamBuilder = () => {
                 },
                 body: JSON.stringify({ 
                     id: allPartyData.length,
-                    name: `Team #${allPartyData.length + 1}`,
+                    name: teamName,
                     team: currentPartyData
                 })
             };
@@ -68,11 +74,17 @@ const TeamBuilder = () => {
                         </div>
                     </div>
                 </div>
+                
                 <div>
-                    {!currentPartyEmpty() && (
-                        <center>
-                            <button onClick={saveCurrentParty}>Save Team</button>
-                        </center>
+                    <center>
+                        <input value={teamName} onChange={e => setTeamName(e.target.value)}/>
+                    </center>
+                    {!currentPartyEmpty() && teamName !== "" && (
+                        <div>
+                            <center>
+                                <button onClick={saveCurrentParty}>Save Team</button>
+                            </center>
+                        </div>
                     )}
                 </div>
             </div>

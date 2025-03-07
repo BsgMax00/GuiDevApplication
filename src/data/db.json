@@ -1159,6 +1159,62 @@
           "type": "fire / flying"
         }
       ]
+    },
+    {
+      "id": 6,
+      "name": "qsdf",
+      "team": [
+        "",
+        {
+          "id": "25",
+          "name": "raichu",
+          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
+          "type": "electric"
+        },
+        {
+          "id": "5",
+          "name": "charizard",
+          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+          "type": "fire / flying"
+        },
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Team #8",
+      "team": [
+        "",
+        "",
+        {
+          "id": "2",
+          "name": "venusaur",
+          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+          "type": "grass / poison"
+        },
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 8,
+      "name": "qsdfqsd",
+      "team": [
+        "",
+        "",
+        {
+          "id": "1",
+          "name": "ivysaur",
+          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+          "type": "grass / poison"
+        },
+        "",
+        "",
+        ""
+      ]
     }
   ]
 }
