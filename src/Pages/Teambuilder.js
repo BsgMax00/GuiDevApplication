@@ -31,7 +31,7 @@ const TeamBuilder = () => {
                 },
                 body: JSON.stringify({
                     id: allPartyData.length,
-                    name: "test",
+                    name: `Team #${allPartyData.length + 1}`,
                     team: currentPartyData
                 })
             };
