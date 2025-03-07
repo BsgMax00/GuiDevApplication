@@ -9,31 +9,31 @@ export const PartyProvider = ({ children }) => {
     const [ currentPartyData, setCurrentPartyData ] = useState(Array(6).fill(""));
     const [ allPartyData, setAllPartyData ] = useState([]);
 
-    useEffect(() => {
-        const fetchPartyData = async() => {
-            try{
-                const response = await fetch("http://localhost:4000/teams");
-                if (!response.ok) {throw new Error("something went wrong in fetching all pokemon. (http://localhost:4000/teams)")};
-                const data = await response.json();
-    
-                const convertedPartyData = data.map(party => 
-                    new Party(party.id, party.name, party.team)
-                );
-    
-                console.log("FETCH ME THEIR SOULS (teams)")
-                await console.log(convertedPartyData)
-                setAllPartyData(convertedPartyData)
-            }
-            catch (error){
-                console.log(error)
-            };
-        };
+    const fetchPartyData = async() => {
+        try{
+            const response = await fetch("http://localhost:4000/teams");
+            if (!response.ok) {throw new Error("something went wrong in fetching all pokemon. (http://localhost:4000/teams)")};
+            const data = await response.json();
 
+            const convertedPartyData = data.map(party => 
+                new Party(party.id, party.name, party.team)
+            );
+
+            console.log("FETCH ME THEIR SOULS (teams)")
+            await console.log(convertedPartyData)
+            setAllPartyData(convertedPartyData)
+        }
+        catch (error){
+            console.log(error)
+        };
+    };
+
+    useEffect(() => {
         fetchPartyData();
     }, [])
 
     return (
-        <PartyContext.Provider value={{ selectedPartyMember, setSelectedPartyMember, currentPartyData, setCurrentPartyData, allPartyData, setAllPartyData }}>
+        <PartyContext.Provider value={{ selectedPartyMember, setSelectedPartyMember, currentPartyData, setCurrentPartyData, allPartyData, setAllPartyData, fetchPartyData }}>
             {children}
         </PartyContext.Provider>
     )

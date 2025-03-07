@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { PartyContext } from "../Context/PartyContext";
 
 const TeamBuilder = () => {
-    const { allPartyData, currentPartyData, setCurrentPartyData } = useContext(PartyContext)
+    const { allPartyData, currentPartyData, setCurrentPartyData, fetchPartyData } = useContext(PartyContext)
 
     const currentPartyEmpty = () => {
         return currentPartyData.every(item => item === "")
@@ -29,7 +29,7 @@ const TeamBuilder = () => {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
+                body: JSON.stringify({ 
                     id: allPartyData.length,
                     name: `Team #${allPartyData.length + 1}`,
                     team: currentPartyData
@@ -39,7 +39,8 @@ const TeamBuilder = () => {
             if (!response.ok) {throw new Error("something went wrong in the post request.")};
             const data = await response.json()
 
-            console.log(data)
+            console.log(data);
+            fetchPartyData();
         }
         catch(error){
             throw error
@@ -51,7 +52,7 @@ const TeamBuilder = () => {
     }
 
     return (
-        <div>
+        <>
             <div className="mx-4" style={{height: "90vh"}}>
                 <div className="d-flex align-items-center h-75">
                     <div className="container-fluid">
@@ -77,7 +78,7 @@ const TeamBuilder = () => {
             </div>
                 
             <TeambuilderModal/>
-        </div>
+        </>
     );
 };
 

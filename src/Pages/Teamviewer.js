@@ -8,13 +8,12 @@ const Teamviewer = () => {
     return (
         <div>
             <div className="mx-4" style={{ height: "90vh" }}>
-                <div className="d-flex h-100">
+                <div className="d-flex">
                     <div className="container-fluid">
-                        <div className="row w-100">
+                        <div className="row">
                             {allPartyData.map((party, index) => {
-                                return <div className="col-6" style={{ height: "25vh"}} key={index}>{party.name}</div>
+                                return <TeamviewerBanner party={party}/>
                             })}
-                            <TeamviewerBanner/>
                         </div>
                     </div>
                 </div>
