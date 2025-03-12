@@ -913,41 +913,16 @@
       "name": "Team #1",
       "team": [
         {
-          "id": "0",
-          "name": "bulbasaur",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-          "type": "grass / poison"
+          "id": "8",
+          "name": "blastoise",
+          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+          "type": "water"
         },
-        {
-          "id": "1",
-          "name": "ivysaur",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
-          "type": "grass / poison"
-        },
-        {
-          "id": "2",
-          "name": "venusaur",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
-          "type": "grass / poison"
-        },
-        {
-          "id": "3",
-          "name": "charmander",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-          "type": "fire"
-        },
-        {
-          "id": "4",
-          "name": "charmeleon",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
-          "type": "fire"
-        },
-        {
-          "id": "5",
-          "name": "charizard",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-          "type": "fire / flying"
-        }
+        "",
+        "",
+        "",
+        "",
+        ""
       ]
     },
     {
@@ -955,239 +930,39 @@
       "name": "Team #2",
       "team": [
         {
-          "id": "6",
-          "name": "squirtle",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-          "type": "water"
+          "id": "0",
+          "name": "bulbasaur",
+          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+          "type": "grass / poison"
         },
-        {
-          "id": "7",
-          "name": "wartortle",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
-          "type": "water"
-        },
-        {
-          "id": "8",
-          "name": "blastoise",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
-          "type": "water"
-        },
-        {
-          "id": "9",
-          "name": "caterpie",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png",
-          "type": "bug"
-        },
-        {
-          "id": "10",
-          "name": "metapod",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png",
-          "type": "bug"
-        },
-        {
-          "id": "11",
-          "name": "butterfree",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png",
-          "type": "bug / flying"
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Team #3",
-      "team": [
-        {
-          "id": "12",
-          "name": "weedle",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/13.png",
-          "type": "bug / poison"
-        },
-        {
-          "id": "13",
-          "name": "kakuna",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png",
-          "type": "bug / poison"
-        },
-        {
-          "id": "14",
-          "name": "beedrill",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png",
-          "type": "bug / poison"
-        },
-        {
-          "id": "15",
-          "name": "pidgey",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png",
-          "type": "normal / flying"
-        },
-        {
-          "id": "16",
-          "name": "pidgeotto",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png",
-          "type": "normal / flying"
-        },
-        {
-          "id": "17",
-          "name": "pidgeot",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png",
-          "type": "normal / flying"
-        }
+        "",
+        "",
+        "",
+        "",
+        ""
       ]
     },
     {
       "id": "3",
       "name": "Team #4",
       "team": [
+        "",
         {
-          "id": "18",
-          "name": "rattata",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png",
-          "type": "normal"
+          "id": "2",
+          "name": "venusaur",
+          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+          "type": "grass / poison"
         },
-        {
-          "id": "19",
-          "name": "raticate",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png",
-          "type": "normal"
-        },
-        {
-          "id": "20",
-          "name": "spearow",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png",
-          "type": "normal / flying"
-        },
-        {
-          "id": "21",
-          "name": "fearow",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/22.png",
-          "type": "normal / flying"
-        },
-        {
-          "id": "22",
-          "name": "ekans",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png",
-          "type": "poison"
-        },
-        {
-          "id": "23",
-          "name": "arbok",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png",
-          "type": "poison"
-        }
+        "",
+        "",
+        "",
+        ""
       ]
     },
     {
       "id": "4",
-      "name": "Team #5",
+      "name": "Team #4",
       "team": [
-        {
-          "id": "0",
-          "name": "bulbasaur",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-          "type": "grass / poison"
-        },
-        {
-          "id": "1",
-          "name": "ivysaur",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
-          "type": "grass / poison"
-        },
-        {
-          "id": "2",
-          "name": "venusaur",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
-          "type": "grass / poison"
-        },
-        {
-          "id": "9",
-          "name": "caterpie",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png",
-          "type": "bug"
-        },
-        {
-          "id": "10",
-          "name": "metapod",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png",
-          "type": "bug"
-        },
-        {
-          "id": "11",
-          "name": "butterfree",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png",
-          "type": "bug / flying"
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "name": "Team #6",
-      "team": [
-        {
-          "id": "6",
-          "name": "squirtle",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-          "type": "water"
-        },
-        {
-          "id": "7",
-          "name": "wartortle",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
-          "type": "water"
-        },
-        {
-          "id": "8",
-          "name": "blastoise",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
-          "type": "water"
-        },
-        {
-          "id": "3",
-          "name": "charmander",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-          "type": "fire"
-        },
-        {
-          "id": "4",
-          "name": "charmeleon",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
-          "type": "fire"
-        },
-        {
-          "id": "5",
-          "name": "charizard",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-          "type": "fire / flying"
-        }
-      ]
-    },
-    {
-      "id": "6",
-      "name": "qsdf",
-      "team": [
-        "",
-        {
-          "id": "25",
-          "name": "raichu",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
-          "type": "electric"
-        },
-        {
-          "id": "5",
-          "name": "charizard",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-          "type": "fire / flying"
-        },
-        "",
-        "",
-        ""
-      ]
-    },
-    {
-      "id": "7",
-      "name": "Team #8",
-      "team": [
-        "",
-        "",
         {
           "id": "2",
           "name": "venusaur",
@@ -1196,61 +971,9 @@
         },
         "",
         "",
-        ""
-      ]
-    },
-    {
-      "id": "8",
-      "name": "qsdfqsd",
-      "team": [
-        "",
-        "",
-        {
-          "id": "1",
-          "name": "ivysaur",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
-          "type": "grass / poison"
-        },
         "",
         "",
         ""
-      ]
-    },
-    {
-      "id": 9,
-      "name": "tesetesfdfs",
-      "team": [
-        {
-          "id": "0",
-          "name": "bulbasaur",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-          "type": "grass / poison"
-        },
-        {
-          "id": "6",
-          "name": "squirtle",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-          "type": "water"
-        },
-        "",
-        {
-          "id": "18",
-          "name": "rattata",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png",
-          "type": "normal"
-        },
-        {
-          "id": "24",
-          "name": "pikachu",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-          "type": "electric"
-        },
-        {
-          "id": "30",
-          "name": "nidoqueen",
-          "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/31.png",
-          "type": "poison / ground"
-        }
       ]
     }
   ]

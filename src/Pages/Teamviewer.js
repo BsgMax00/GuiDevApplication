@@ -10,8 +10,8 @@ const Teamviewer = () => {
             <div className="d-flex">
                 <div className="container-fluid">
                     <div className="row">
-                        {allPartyData.map((party) => {
-                            return <TeamviewerBanner party={party}/>
+                        {allPartyData.map((party, index) => {
+                            return <TeamviewerBanner key={index} party={party}/>
                         })}
                     </div>
                 </div>

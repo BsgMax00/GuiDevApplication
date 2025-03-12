@@ -17,7 +17,6 @@ export const PokemonProvider = ({ children }) => {
                     new Pokemon(pokemon.id, pokemon.name, pokemon.imageUrl, pokemon.type)
                 );
 
-                console.log("FETCH ME THEIR SOULS (pokemon)")
                 setPokemonData(convertedPokemonData)
             }
             catch( error ) {

@@ -18,9 +18,7 @@ export const PartyProvider = ({ children }) => {
             const convertedPartyData = data.map(party => 
                 new Party(party.id, party.name, party.team)
             );
-
-            console.log("FETCH ME THEIR SOULS (teams)")
-            await console.log(convertedPartyData)
+            
             setAllPartyData(convertedPartyData)
         }
         catch (error){
