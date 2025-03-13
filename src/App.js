@@ -10,6 +10,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Teambuilder/>}/>
+        <Route path="/:currentPartyId" element={<Teambuilder/>}/>
         <Route path="/Teamviewer" element={<Teamviewer/>}/>
       </Routes>
     </BrowserRouter>

@@ -3,60 +3,46 @@ import TeambuilderModal from "../Components/TeambuilderModal";
 
 import { useContext, useState, useEffect } from "react";
 import { PartyContext } from "../Context/PartyContext";
+import { useNavigate, useParams } from "react-router-dom";
 
 const TeamBuilder = () => {
-    const { allPartyData, currentPartyData, setCurrentPartyData, fetchPartyData } = useContext(PartyContext)
-    const [ teamName, setTeamName ] = useState("")
+    const { allPartyData, currentPartyData, setCurrentPartyData, teamName, setTeamName, getLastPartyId, postData, putData } = useContext(PartyContext)
+    const [ isEditing, setIsEditing ] = useState(false)
+    const {currentPartyId } = useParams()
+    let navigate = useNavigate()
 
     useEffect(() => {
-        setTeamName(`Team #${allPartyData.length + 1}`);
-    }, [allPartyData])
+        const partyToEdit = allPartyData.find(item => item.id === currentPartyId)
+        if (partyToEdit && allPartyData.length !== 0){
+            console.log(partyToEdit)
+            setCurrentPartyData(partyToEdit.team)
+            setTeamName(partyToEdit.name)
+            setIsEditing(true)
+            console.log(partyToEdit.team)
+        }
+        else {
+            setTeamName(`Team #${allPartyData.length + 1}`);
+            setIsEditing(false)
+        }
+    }, [allPartyData, currentPartyId, setCurrentPartyData, setTeamName])
 
     const currentPartyEmpty = () => {
         return currentPartyData.every(item => item === "")
     }
 
-    const getLastPartyId = ()  => {
-        const length = allPartyData.length;
-        if (length === 0) {
-            return -1
-        }
-        return Number(allPartyData[length - 1].id);
-    }
-
     const saveCurrentParty = async () => {
         try{
-            await postData();
+            if (isEditing){
+                await putData(currentPartyId);
+            }
+            else {
+                await postData();
+            }
             emptyCurrentParty();
-            console.log(getLastPartyId() + 1)
             setTeamName(`Team #${getLastPartyId() + 1}`);
         }
         catch (error){
             console.log(error)
-        }
-    }
-
-    const postData = async () => {
-        try{
-            const settings = {
-                method: "POST",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 
-                    id: `${getLastPartyId() + 1}`,
-                    name: teamName,
-                    team: currentPartyData
-                })
-            };
-            const response = await fetch("http://localhost:4000/teams", settings)
-            if (!response.ok) {throw new Error("something went wrong in the post request.")};
-
-            fetchPartyData();
-        }
-        catch(error){
-            throw error;
         }
     }
 
@@ -71,7 +57,11 @@ const TeamBuilder = () => {
                     <div className="container-fluid">
                         <div className="row">
                             <center className="col-12 mb-3">
+                            {isEditing ? (
+                                <h2>Edit your team</h2>
+                            ) : (
                                 <h2>Pick your pokemon for your team</h2>
+                            )}
                             </center>
                         </div>
                         <div className="row">
@@ -87,11 +77,9 @@ const TeamBuilder = () => {
                         <input value={teamName} onChange={e => setTeamName(e.target.value)}/>
                     </center>
                     {!currentPartyEmpty() && teamName !== "" && (
-                        <div>
-                            <center>
-                                <button onClick={saveCurrentParty}>Save Team</button>
-                            </center>
-                        </div>
+                        <center>
+                            <button onClick={() => {saveCurrentParty(); navigate("/Teamviewer")}}>Save Team</button>
+                        </center>
                     )}
                 </div>
             </div>
