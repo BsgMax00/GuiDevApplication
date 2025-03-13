@@ -6,25 +6,23 @@ import { PartyContext } from "../Context/PartyContext";
 import { useNavigate, useParams } from "react-router-dom";
 
 const TeamBuilder = () => {
-    const { allPartyData, currentPartyData, setCurrentPartyData, teamName, setTeamName, getLastPartyId, postData, putData } = useContext(PartyContext)
+    const { allPartyData, currentPartyData, setCurrentPartyData, teamName, setTeamName, getLastPartyId, postPartyData, putPartyData } = useContext(PartyContext)
     const [ isEditing, setIsEditing ] = useState(false)
     const {currentPartyId } = useParams()
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     useEffect(() => {
         const partyToEdit = allPartyData.find(item => item.id === currentPartyId)
         if (partyToEdit && allPartyData.length !== 0){
-            console.log(partyToEdit)
             setCurrentPartyData(partyToEdit.team)
             setTeamName(partyToEdit.name)
             setIsEditing(true)
-            console.log(partyToEdit.team)
         }
         else {
-            setTeamName(`Team #${allPartyData.length + 1}`);
+            setTeamName(`Team #${getLastPartyId() + 2}`);
             setIsEditing(false)
         }
-    }, [allPartyData, currentPartyId, setCurrentPartyData, setTeamName])
+    }, [allPartyData, currentPartyId, setCurrentPartyData, setTeamName, getLastPartyId])
 
     const currentPartyEmpty = () => {
         return currentPartyData.every(item => item === "")
@@ -33,10 +31,10 @@ const TeamBuilder = () => {
     const saveCurrentParty = async () => {
         try{
             if (isEditing){
-                await putData(currentPartyId);
+                await putPartyData(currentPartyId);
             }
             else {
-                await postData();
+                await postPartyData();
             }
             emptyCurrentParty();
             setTeamName(`Team #${getLastPartyId() + 1}`);
@@ -78,7 +76,7 @@ const TeamBuilder = () => {
                     </center>
                     {!currentPartyEmpty() && teamName !== "" && (
                         <center>
-                            <button onClick={() => {saveCurrentParty(); navigate("/Teamviewer")}}>Save Team</button>
+                            <button onClick={() => {saveCurrentParty(); navigate("/Teamviewer");}}>Save Team</button>
                         </center>
                     )}
                 </div>

@@ -35,7 +35,7 @@ export const PartyProvider = ({ children }) => {
         };
     };
 
-    const deleteData = async (party) => {
+    const deletePartyData = async (party) => {
         try{
             const settings = {
                 method: "DELETE",
@@ -54,7 +54,7 @@ export const PartyProvider = ({ children }) => {
         };
     };
 
-    const postData = async () => {
+    const postPartyData = async () => {
         try{
             const settings = {
                 method: "POST",
@@ -78,7 +78,7 @@ export const PartyProvider = ({ children }) => {
         };
     };
 
-    const putData = async (currentPartyId) => {
+    const putPartyData = async (currentPartyId) => {
         try{
             const settings = {
                 method: "PUT",
@@ -107,7 +107,7 @@ export const PartyProvider = ({ children }) => {
     }, [])
 
     return (
-        <PartyContext.Provider value={{ selectedPartyMember, setSelectedPartyMember, currentPartyData, setCurrentPartyData, allPartyData, setAllPartyData, teamName, setTeamName, getLastPartyId, fetchPartyData, deleteData, postData, putData }}>
+        <PartyContext.Provider value={{ selectedPartyMember, setSelectedPartyMember, currentPartyData, setCurrentPartyData, allPartyData, setAllPartyData, teamName, setTeamName, getLastPartyId, fetchPartyData, deletePartyData, postPartyData, putPartyData }}>
             {children}
         </PartyContext.Provider>
     )

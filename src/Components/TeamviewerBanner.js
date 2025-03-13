@@ -8,12 +8,12 @@ import { useNavigate } from "react-router-dom"
 import { PartyContext } from "../Context/PartyContext"
 
 const TeamviewerBanner = ({ party }) => {
-    const { deleteData } = useContext(PartyContext)
+    const { deletePartyData } = useContext(PartyContext)
     let navigate = useNavigate();
 
     const DeleteParty = async () => {
         try{
-            await deleteData(party);
+            await deletePartyData(party);
         }
         catch (error){
             console.log(error)
@@ -26,7 +26,7 @@ const TeamviewerBanner = ({ party }) => {
                 <div className="d-flex justify-content-between">
                     <h3 className="m-2 text-center w-100 flex-grow-1">{party.name}</h3>
                     <TeamviewerIcon Icon={editButton} onClick={() => navigate(`/${party.id}`, { replace: true })}/>
-                    <TeamviewerIcon Icon={deleteButton} onClick={DeleteParty}/>
+                    <TeamviewerIcon Icon={deleteButton} onClick={() => DeleteParty()}/>
                 </div>
                 <div className="container-fluid px-0">
                     <div className="row g-2 m-2">

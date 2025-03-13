@@ -1,6 +1,7 @@
+import TeamviewerBanner from "../Components/TeamviewerBanner";
+
 import { useContext } from "react";
 import { PartyContext } from "../Context/PartyContext";
-import TeamviewerBanner from "../Components/TeamviewerBanner";
 
 const Teamviewer = () => {
     const { allPartyData } = useContext(PartyContext)
@@ -10,9 +11,15 @@ const Teamviewer = () => {
             <div className="d-flex">
                 <div className="container-fluid">
                     <div className="row">
-                        {allPartyData.map((party, index) => {
-                            return <TeamviewerBanner key={index} party={party}/>
-                        })}
+                        {allPartyData.length !== 0 ? (
+                            allPartyData.map((party, index) => {
+                                return <TeamviewerBanner key={index} party={party}/>
+                            })
+                        ) : (
+                            <center>
+                                <h3>You currently have no teams saved.</h3>
+                            </center>
+                        )}
                     </div>
                 </div>
             </div>
