@@ -1,4 +1,4 @@
-import TeamviewerBanner from "../Components/TeamviewerBanner";
+import TeamviewerBanner from "../Components/Teamviewer/TeamviewerBanner";
 
 import { useContext } from "react";
 import { PartyContext } from "../Context/PartyContext";

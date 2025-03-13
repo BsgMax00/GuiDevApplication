@@ -1,8 +1,8 @@
 import TeambuilderModalCard from "./TeambuilderModalCard";
 
 import { useContext } from "react";
-import { ModalContext } from "../Context/ModalContext";
-import { PokemonContext } from "../Context/PokemonContext";
+import { ModalContext } from "../../../Context/ModalContext";
+import { PokemonContext } from "../../../Context/PokemonContext";
 
 const TeambuilderModal = () => {
     const { pokemonData } = useContext(PokemonContext)

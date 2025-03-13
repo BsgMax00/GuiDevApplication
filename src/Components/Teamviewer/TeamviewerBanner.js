@@ -1,11 +1,11 @@
-import pokeball from "../Icons/pokeball.png"
-import editButton from "../Icons/edit.png"
-import deleteButton from "../Icons/delete.png"
+import pokeball from "../../Icons/pokeball.png"
+import editButton from "../../Icons/edit.png"
+import deleteButton from "../../Icons/delete.png"
 import TeamviewerIcon from "./TeamviewerIcons"
 
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
-import { PartyContext } from "../Context/PartyContext"
+import { PartyContext } from "../../Context/PartyContext"
 
 const TeamviewerBanner = ({ party }) => {
     const { deletePartyData } = useContext(PartyContext)

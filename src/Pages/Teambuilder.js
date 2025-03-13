@@ -1,5 +1,5 @@
-import TeambuilderPokemonCard from "../Components/TeambuilderPokemonCard";
-import TeambuilderModal from "../Components/TeambuilderModal";
+import TeambuilderPokemonCard from "../Components/Teambuilder/TeambuilderPokemonCard";
+import TeambuilderModal from "../Components/Teambuilder/modal/TeambuilderModal";
 
 import { useContext, useState, useEffect } from "react";
 import { PartyContext } from "../Context/PartyContext";
