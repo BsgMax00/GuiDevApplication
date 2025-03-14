@@ -1,6 +1,5 @@
+import { serviceGetPartyData, serviceDeletePartyData, servicePostPartyData, servicePutPartyData } from "../services/PartyService";
 import { createContext, useEffect, useState } from "react";
-
-import Party from "../Classes/Party"
 
 export const PartyContext = createContext()
 
@@ -9,6 +8,7 @@ export const PartyProvider = ({ children }) => {
     const [ currentPartyData, setCurrentPartyData ] = useState(Array(6).fill(""));
     const [ allPartyData, setAllPartyData ] = useState([]);
     const [ teamName, setTeamName ] = useState("")
+    const [ isEditing, setIsEditing ] = useState(false)
 
     const getLastPartyId = ()  => {
         const length = allPartyData.length;
@@ -18,96 +18,32 @@ export const PartyProvider = ({ children }) => {
         return Number(allPartyData[length - 1].id);
     }
 
-    const fetchPartyData = async() => {
-        try{
-            const response = await fetch("http://localhost:4000/teams");
-            if (!response.ok) {throw new Error("something went wrong in fetching all pokemon. (http://localhost:4000/teams)")};
-            const data = await response.json();
-
-            const convertedPartyData = data.map(party => 
-                new Party(party.id, party.name, party.team)
-            );
-            
-            setAllPartyData(convertedPartyData)
-        }
-        catch (error){
-            console.log(error)
-        };
+    const getPartyData = async() => {
+        const data = await serviceGetPartyData();
+        setAllPartyData(data)
     };
 
-    const deletePartyData = async (party) => {
-        try{
-            const settings = {
-                method: "DELETE",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                }
-            };
-            const response = await fetch(`http://localhost:4000/teams/${party.id}`, settings);
-            if (!response.ok) {throw new Error("something went wrong in the delete request.");};
-            
-            fetchPartyData();
-        }
-        catch (error){
-            throw error;
-        };
+    const deletePartyData = async(party) => {
+        await serviceDeletePartyData(party);
+        getPartyData();
     };
 
-    const postPartyData = async () => {
-        try{
-            const settings = {
-                method: "POST",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 
-                    id: `${getLastPartyId() + 1}`,
-                    name: teamName,
-                    team: currentPartyData
-                })
-            };
-            const response = await fetch("http://localhost:4000/teams", settings);
-            if (!response.ok) {throw new Error("something went wrong in the post request.")};
-
-            fetchPartyData();
-        }
-        catch(error){
-            throw error;
-        };
+    const postPartyData = async() => {
+        await servicePostPartyData(getLastPartyId() + 1, teamName, currentPartyData);
+        getPartyData();
     };
 
-    const putPartyData = async (currentPartyId) => {
-        try{
-            const settings = {
-                method: "PUT",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 
-                    id: `${currentPartyId}`,
-                    name: teamName,
-                    team: currentPartyData
-                })
-            };
-            const response = await fetch(`http://localhost:4000/teams/${currentPartyId}`, settings);
-            if (!response.ok) {throw new Error("something went wrong in the post request.")};
-
-            fetchPartyData();
-        }
-        catch(error){
-            throw error;
-        };
-    };
+    const putPartyData = async(currentPartyId) => {
+        await servicePutPartyData(currentPartyId, teamName, currentPartyData)
+        getPartyData();
+    }
 
     useEffect(() => {
-        fetchPartyData();
+        getPartyData();
     }, [])
 
     return (
-        <PartyContext.Provider value={{ selectedPartyMember, setSelectedPartyMember, currentPartyData, setCurrentPartyData, allPartyData, setAllPartyData, teamName, setTeamName, getLastPartyId, fetchPartyData, deletePartyData, postPartyData, putPartyData }}>
+        <PartyContext.Provider value={{ selectedPartyMember, setSelectedPartyMember, currentPartyData, setCurrentPartyData, allPartyData, setAllPartyData, teamName, setTeamName,isEditing, setIsEditing, getLastPartyId, getPartyData, deletePartyData, postPartyData, putPartyData }}>
             {children}
         </PartyContext.Provider>
     )

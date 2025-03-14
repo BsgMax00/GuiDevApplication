@@ -1,8 +1,8 @@
-import PlusIcon from "../Icons/PlusIcon.png"
+import PlusIcon from "../../Icons/PlusIcon.png"
 
 import { useContext } from "react";
-import { ModalContext } from "../Context/ModalContext";
-import { PartyContext } from "../Context/PartyContext";
+import { ModalContext } from "../../Context/ModalContext";
+import { PartyContext } from "../../Context/PartyContext";
 
 const TeambuilderPokemonCard = ({ pokemon, index }) => {
     const { setCurrentPartyData, setSelectedPartyMember } = useContext(PartyContext)

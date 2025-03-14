@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ModalContext } from "../Context/ModalContext";
-import { PartyContext } from "../Context/PartyContext";
+import { ModalContext } from "../../../Context/ModalContext";
+import { PartyContext } from "../../../Context/PartyContext";
 
 const TeambuilderModalCard = ({ pokemon }) => {
     const { setShowModal } = useContext(ModalContext);
